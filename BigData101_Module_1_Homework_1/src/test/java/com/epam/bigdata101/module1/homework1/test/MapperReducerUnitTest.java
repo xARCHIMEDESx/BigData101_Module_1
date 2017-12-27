@@ -46,11 +46,11 @@ public class MapperReducerUnitTest {
 		reduceDriver.runTest();
 	}
 	
-		// NOT ISOLATED TEST!!!
-//	 @Test
-//	 public void testMapperReducer() throws IOException{
-//		 mapReduceDriver.withInput(new LongWritable(), new Text("My name is Vitaliy Pivovar"));
-//		 mapReduceDriver.withOutput(new LongWritable(7), new Text("Vitaliy" + " " + "Pivovar" + " "));
-//		 mapReduceDriver.runTest();
-//	 }
+	@Test
+	public void testMapperReducer() throws IOException{
+		mapReduceDriver.withInput(new LongWritable(), new Text("My name is Vitaliy Pivovar"));
+		mapReduceDriver.withInput(new LongWritable(), new Text("Welcome to Lviv"));
+		mapReduceDriver.withOutput(new LongWritable(7), new Text("Vitaliy " + "Pivovar " + "Welcome "));
+		mapReduceDriver.runTest();
+	}
 }
